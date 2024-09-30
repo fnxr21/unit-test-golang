@@ -9,3 +9,6 @@ git commit -m "$commitMessage"
 git push origin main
 
 echo 'Thank you for updated your repository'
+
+# di git bash
+# ./run.sh

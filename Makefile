@@ -18,3 +18,8 @@ run:
 
 # migrate-down:
 # 	@go run cmd/migrate/main.go down
+
+
+# tinggal masukan cmd
+# make run
+#  make comanda buatan
