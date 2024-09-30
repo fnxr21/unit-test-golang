@@ -23,10 +23,10 @@ func TestHelloIvan(t *testing.T) {
 
 func TestHelloWorldFail(t *testing.T) {
 	result := HelloWorld("IVAN")
-	if result != "Hello IVAN fail" {
+	if result != "Hello IVAN" {
 		t.Fail()
+		fmt.Println("test still continue,right ")
 	}
-	fmt.Println("test still continue,right ")
 }
 
 // this fail and not  continue because use t.FailNow()
@@ -34,10 +34,10 @@ func TestHelloWorldFail(t *testing.T) {
 
 func TestHelloWorldFailNow(t *testing.T) {
 	result := HelloWorld("IVAN")
-	if result != "Hello IVAN fail" {
+	if result != "Hello IVANs" {
 		t.FailNow()
+		fmt.Println("test not continue,right ")
 	}
-	fmt.Println("test not continue,right ")
 }
 
 //for note they send args or infor what error
@@ -47,10 +47,10 @@ func TestHelloWorldFailNow(t *testing.T) {
 
 func TestHelloWorldError(t *testing.T) {
 	result := HelloWorld("IVAN")
-	if result != "Hello IVAN fail" {
+	if result != "Hello IVAN" {
 		t.Error("Result must be 'Hello Ivan'")
+		fmt.Println("test continue,right ")
 	}
-	fmt.Println("test continue,right ")
 }
 
 // this fail and still  continue because use t.Error()
@@ -58,8 +58,8 @@ func TestHelloWorldError(t *testing.T) {
 
 func TestHelloWorldFatal(t *testing.T) {
 	result := HelloWorld("IVAN")
-	if result != "Hello IVAN fail" {
+	if result != "Hello IVAN" {
 		t.Fatal("Result must be 'Hello Ivan'")
+		fmt.Println("test not continue,right ")
 	}
-	fmt.Println("test not continue,right ")
 }
