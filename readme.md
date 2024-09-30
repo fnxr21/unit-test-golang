@@ -41,8 +41,8 @@ FailNow() akan menggagalkan unit test saat ini juga ,tanpa menlanjutkan eksekusi
 ```go
 func Testng(t *testing.T) {
     Fail()
-    FailNow() // akan menggagalkan unit test saat ini juga ,tanpa menlanjutkan eksekusi unit test
-    Error() //
-    Fatal() //
+    FailNow()
+    Error()
+    Fatal()
 }
 ```
