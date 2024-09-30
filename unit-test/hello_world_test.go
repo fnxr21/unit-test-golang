@@ -1,10 +1,23 @@
-package unittesthelloworld
+package unittest
 
 import (
 	"fmt"
+	"runtime"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
+func TestMain(m *testing.M) {
+	// before
+	fmt.Println("BEFORE UNIT TEST")
+	//runing all testing
+	m.Run()
+	// after
+	fmt.Println("AFTER UNIT TEST")
+}
+
+// ========================== unit test basic
 func TestHelloWorld(t *testing.T) {
 	result := HelloWorld("IVAN")
 	if result != "Hello IVAN" {
@@ -34,7 +47,7 @@ func TestHelloWorldFail(t *testing.T) {
 
 func TestHelloWorldFailNow(t *testing.T) {
 	result := HelloWorld("IVAN")
-	if result != "Hello IVANs" {
+	if result != "Hello IVAN" {
 		t.FailNow()
 		fmt.Println("test not continue,right ")
 	}
@@ -62,4 +75,33 @@ func TestHelloWorldFatal(t *testing.T) {
 		t.Fatal("Result must be 'Hello Ivan'")
 		fmt.Println("test not continue,right ")
 	}
+}
+
+// ========================== unit test testify
+// # go test -v  -run=TestHelloRequire
+
+func TestHelloRequire(t *testing.T) {
+	result := HelloWorld("IVAN")
+	assert.Equal(t, "Hello IVAN", result, "Result must be 'Hello IVAN'")
+	//this will stop if failed and not continue
+	fmt.Println("TestHelloAssertion with require done")
+}
+
+// # go test -v  -run TestHelloAssertion
+func TestHelloAssertion(t *testing.T) {
+	result := HelloWorld("IVAN")
+	assert.Equal(t, "Hello IVAN", result, "Result must be 'Hello IVAN'")
+	fmt.Println("TestHelloAssertion with asserth done")
+}
+
+// ========================== skip
+// skip ini hanya dalam keadaan tertentu
+func TestSkip(t *testing.T) {
+	if runtime.GOOS == "darwin" {
+		t.Skip("cant not run on mac os")
+	}
+
+	//sample unittest
+	result := HelloWorld("IVAN")
+	assert.Equal(t, "Hello IVAN", result, "Result must be 'Hello IVAN'")
 }

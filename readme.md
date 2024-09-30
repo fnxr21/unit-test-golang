@@ -46,3 +46,21 @@ func Testng(t *testing.T) {
     Fatal()
 }
 ```
+
+## Assertions
+
+disini kita menggunakan testify untuk handle if else atau condition
+
+mereka ada 2 jenis assertion dan require sama seperti fail() dan failnow()
+
+## Skip
+
+skip ini hanya dalam keadaan tertentu
+
+contoh perbedaan env atau os windods dan mac os
+
+## before and after test
+
+kita mengunkan testing.M yang dimana artinya main not before or after cuma kita mengunakan salah satu fitur nya saja
+
+agak strict karna penuliosan func hbarus TestMain dan hanyua di eksekusi sekali ketika memulai dan tidak per function
