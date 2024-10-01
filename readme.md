@@ -1,13 +1,12 @@
-# Command
+# Unit Testing
 
-credit API folder
+Credit
 
-Richard han
-[gmail](richardhan82@gmail.com) & [github](https://github.com/RichardHanitio)
+Folder API
 
-eko khanedy kurniawan
+Richard han [github](https://github.com/RichardHanitio)
 
-[linkedin](https://www.linkedin.com/in/khannedy/)
+eko khanedy kurniawan [linkedin](https://www.linkedin.com/in/khannedy/)
 
 <!--
 [link doc](https://docs.google.com/presentation/d/1XxMEaA-JsPHr9BUw2oIOPlEL_psI3EaUFUpuvdlDB_Q/edit#slide=id.gb233370586_0_300) -->
