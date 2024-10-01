@@ -1,7 +1,10 @@
 # Command
 
-credit eko khanedy kurniawan
+credit API folder
+[Richard gmail](richardhan82@gmail.com)
+[Richard github](<[richardhan82@gmail.com](https://github.com/RichardHanitio)>)
 
+credit eko khanedy kurniawan
 [link doc](https://docs.google.com/presentation/d/1XxMEaA-JsPHr9BUw2oIOPlEL_psI3EaUFUpuvdlDB_Q/edit#slide=id.gb233370586_0_300)
 
 ## Agenda
