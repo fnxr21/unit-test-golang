@@ -1,6 +1,31 @@
 # Command
 
-## basic comand
+credit eko khanedy kurniawan
+
+[link doc](https://docs.google.com/presentation/d/1XxMEaA-JsPHr9BUw2oIOPlEL_psI3EaUFUpuvdlDB_Q/edit#slide=id.gb233370586_0_300)
+
+## Agenda
+
+- Pengenalan Software Testing
+- testing Package
+- Unit Test
+- Assertion
+- Mock, dan
+- Benchmark
+
+## Pengenalan Software Testing
+
+- Software testing adalah salah satu disiplin ilmu dalam software engineering
+- Tujuan utama dari software testing adalah memastikan kualitas kode dan aplikasi kita baik
+- Ilmu untuk software testing sendiri sangatlah luas, pada materi ini kita hanya akan fokus ke unit testing
+
+## test piramid
+
+![image](https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png)
+
+## Contoh High Level Architecture Aplikasi
+
+### basic comand
 
 ```cmd
 go test
@@ -68,3 +93,13 @@ agak strict karna penuliosan func hbarus TestMain dan hanyua di eksekusi sekali 
 ## SubTest
 
 membuat test didalam function testing
+
+## tableTest
+
+banyak dev golang makai ini untuk melakukan test
+
+ini semua untuk menghidari testing secara manual atau doubel
+
+## MOCK
+
+golang tidak memiliki mock bawaan jadi kita mengunakan mock testify
