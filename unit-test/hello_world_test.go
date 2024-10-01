@@ -8,14 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestMain(m *testing.M) {
-	// before
-	fmt.Println("BEFORE UNIT TEST")
-	//runing all testing
-	m.Run()
-	// after
-	fmt.Println("AFTER UNIT TEST")
-}
+// =================== table test
+
+
 
 // ========================== unit test basic
 func TestHelloWorld(t *testing.T) {
@@ -104,4 +99,31 @@ func TestSkip(t *testing.T) {
 	//sample unittest
 	result := HelloWorld("IVAN")
 	assert.Equal(t, "Hello IVAN", result, "Result must be 'Hello IVAN'")
+}
+
+// ============================ test main
+func TestMain(m *testing.M) {
+	// before
+	fmt.Println("BEFORE UNIT TEST")
+	//runing all testing
+	m.Run()
+	// after
+	fmt.Println("AFTER UNIT TEST")
+}
+
+// ================= sub test
+
+// go test -v -run=TestSubTest
+
+// run sub test function spesific
+// go test -v -run=TestSubTest/Fandi
+func TestSubTest(t *testing.T) {
+	t.Run("Fandi", func(t *testing.T) {
+		result := HelloWorld("Fandi")
+		assert.Equal(t, "Hello Fandi", result, "Result must be 'Hello Fandi'")
+	})
+	t.Run("Nur", func(t *testing.T) {
+		result := HelloWorld("Nur")
+		assert.Equal(t, "Hello Nur", result, "Result must be 'Hello Nur'")
+	})
 }

@@ -64,3 +64,7 @@ contoh perbedaan env atau os windods dan mac os
 kita mengunkan testing.M yang dimana artinya main not before or after cuma kita mengunakan salah satu fitur nya saja
 
 agak strict karna penuliosan func hbarus TestMain dan hanyua di eksekusi sekali ketika memulai dan tidak per function
+
+## SubTest
+
+membuat test didalam function testing
