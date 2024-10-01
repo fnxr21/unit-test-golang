@@ -1,8 +1,6 @@
 run:
 	@go run main.go
 
-runs:
-	@sh run.sh
 
 # test:
 # 	@go test -v ./...

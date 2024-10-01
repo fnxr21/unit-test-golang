@@ -2,8 +2,8 @@ package service
 
 import (
 	"testing"
-	"unit-test/entity"
-	"unit-test/repository"
+	"unit-test/mock/entity"
+	"unit-test/mock/repository"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

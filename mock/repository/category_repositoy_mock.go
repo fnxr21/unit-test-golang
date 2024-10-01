@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"unit-test/entity"
+	"unit-test/mock/entity"
 
 	"github.com/stretchr/testify/mock"
 )

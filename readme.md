@@ -103,3 +103,7 @@ ini semua untuk menghidari testing secara manual atau doubel
 ## MOCK
 
 golang tidak memiliki mock bawaan jadi kita mengunakan mock testify
+
+## Benchmark
+
+menghitung kecepatan perfoma code aplikasi

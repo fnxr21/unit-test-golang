@@ -2,8 +2,8 @@ package service
 
 import (
 	"errors"
-	"unit-test/entity"
-	"unit-test/repository"
+	"unit-test/mock/entity"
+	"unit-test/mock/repository"
 )
 
 type CategoryService struct {
@@ -14,7 +14,7 @@ type CategoryService struct {
 func (service CategoryService) Get(id string) (*entity.Category, error) {
 	category := service.Repository.FindById(id)
 	if category == nil {
-		return nil, errors.New("Category Not Found")
+		return nil, errors.New("category not found")
 	} else {
 		return category, nil
 	}
