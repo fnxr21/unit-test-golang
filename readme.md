@@ -13,6 +13,7 @@ eko khanedy kurniawan [linkedin](https://www.linkedin.com/in/khannedy/)
 
 ## Agenda
 
+- Api
 - Pengenalan Software Testing
 - testing Package
 - Unit Test
