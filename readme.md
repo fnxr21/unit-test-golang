@@ -1,7 +1,5 @@
 # Unit Testing
 
-Credit
-
 Folder API
 
 Richard han [github](https://github.com/RichardHanitio)
