@@ -9,11 +9,25 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+//ini kena semua dengan testing dan benchmark
+//go test -v -bench=.
 
+// ini kena  benchmark saja di
+// go test -v -run=NotMathUnitTest -bench=.
+// spesifik
+// go test -v -run=NotMathUnitTest -bench=BenchmarkHelloWorldNur
 
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Fandi")
+	}
+}
 
-
-
+func BenchmarkHelloWorldNur(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Nur")
+	}
+}
 
 // ========================== unit test basic
 func TestHelloWorld(t *testing.T) {
