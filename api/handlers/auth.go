@@ -20,9 +20,9 @@ func Handler(handler HandlerGlobal) *HandlerGlobal {
 	}
 }
 
-func (h *HandlerGlobal) ManagerCheckAuth(c echo.Context) error {
+func (h *HandlerGlobal) CheckAuth(c echo.Context) error {
 
-	userClaims := c.Get("managerLogin").(jwt.MapClaims)
+	userClaims := c.Get("UserLogin").(jwt.MapClaims)
 	handphone, _ := userClaims["handphone"].(string)
 
 	data := "not-active"
@@ -33,7 +33,7 @@ func (h *HandlerGlobal) ManagerCheckAuth(c echo.Context) error {
 
 	}
 	if FInduser.Handphone != "" {
-		data = "still-active-manager"
+		data = "still-active"
 		log.Println("user")
 	}
 

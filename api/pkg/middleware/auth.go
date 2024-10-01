@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"log"
 	"unit-test/api/handlers"
 	jwtToken "unit-test/api/pkg/jwt"
 
@@ -38,20 +37,8 @@ func Auth(next echo.HandlerFunc) echo.HandlerFunc {
 			return c.JSON(http.StatusUnauthorized, handlers.ErrorResult{Status: http.StatusUnauthorized, Message: "unauthorized"})
 		}
 
-		level, ok := claims["level"].(float64)
-		if !ok {
-			return c.JSON(http.StatusUnauthorized, "unauthorized")
-		}
-		if level != 1 {
+		c.Set("UserLogin", claims)
+		return next(c)
 
-			status, _ := claims["status"].(string)
-			if status == "manager" {
-				log.Println(claims, "manager====")
-				c.Set("managerLogin", claims)
-				return next(c)
-			}
-		}
-
-		return c.JSON(http.StatusUnauthorized, "unauthorized-not-found")
 	}
 }

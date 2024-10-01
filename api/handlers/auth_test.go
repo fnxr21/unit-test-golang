@@ -27,34 +27,32 @@ func (repository *MockPenghuniRepository) ClientGetNumber(handphone string) (mod
 	return args.Get(0).(models.Penghuni), args.Error(1)
 }
 
-func TestManagerCheckAuth(t *testing.T) {
+func TestCheckAuth(t *testing.T) {
 	penghuni := models.Penghuni{
 		ID:           3,
 		PenghuniName: "richard",
-		Handphone:    "6285925025265",
-		Kategori:     1,
+		Handphone:    "6281111111111",
 	}
 
 	claims := jwt.MapClaims{}
 	claims["id"] = 3
 	claims["name"] = penghuni.PenghuniName
 	claims["handphone"] = penghuni.Handphone
-	claims["level"] = penghuni.Kategori
 
-	t.Run("should return status 200 with still-active-manager", func(t *testing.T) {
+	t.Run("should return status 200 with still-active", func(t *testing.T) {
 		penghuniRepository.Mock.On("ClientGetNumber", penghuni.Handphone).Return(penghuni, nil).Once()
 
 		e := echo.New()
 		req := httptest.NewRequest(http.MethodGet, "/", nil)
 		rec := httptest.NewRecorder()
 		c := e.NewContext(req, rec)
-		c.Set("managerLogin", claims)
+		c.Set("UserLogin", claims)
 
-		err := penghuniHandler.ManagerCheckAuth(c)
+		err := penghuniHandler.CheckAuth(c)
 
 		if assert.NoError(t, err) {
 			assert.Equal(t, http.StatusOK, rec.Code)
-			assert.JSONEq(t, `{"status":200,"data":"still-active-manager"}`, rec.Body.String())
+			assert.JSONEq(t, `{"status":200,"data":"still-active"}`, rec.Body.String())
 		}
 	})
 
@@ -66,9 +64,9 @@ func TestManagerCheckAuth(t *testing.T) {
 		req := httptest.NewRequest(http.MethodGet, "/", nil)
 		rec := httptest.NewRecorder()
 		c := e.NewContext(req, rec)
-		c.Set("managerLogin", claims)
+		c.Set("UserLogin", claims)
 
-		err := penghuniHandler.ManagerCheckAuth(c)
+		err := penghuniHandler.CheckAuth(c)
 
 		if assert.NoError(t, err) {
 			assert.Equal(t, http.StatusUnauthorized, rec.Code)
