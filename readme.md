@@ -1,13 +1,5 @@
 # Unit Testing
 
-Folder API
-
-Richard han [github](https://github.com/RichardHanitio)
-
-_others_
-
-eko khanedy kurniawan [linkedin](https://www.linkedin.com/in/khannedy/)
-
 <!--
 [link doc](https://docs.google.com/presentation/d/1XxMEaA-JsPHr9BUw2oIOPlEL_psI3EaUFUpuvdlDB_Q/edit#slide=id.gb233370586_0_300) -->
 
